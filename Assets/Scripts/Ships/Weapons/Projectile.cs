@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private string _id;
     [SerializeField] private Rigidbody2D _rigidBody;
     [SerializeField] private float _speed;
+
+    public string Id => _id;
 
     private void Start()
     {

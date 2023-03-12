@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 4714454037070712300}
   - component: {fileID: 4714454037070712303}
   - component: {fileID: 4714454037070712301}
+  - component: {fileID: 5269046813608153495}
+  - component: {fileID: 5719664476069948063}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -129,7 +131,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f61391d84f9b4b44a86f663af24f4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _movementControler: {fileID: 5269046813608153495}
+  _weaponControler: {fileID: 5719664476069948063}
+--- !u!114 &5269046813608153495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4714454037070712302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f245f0bebca0e534b883b1f2d50e9ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+--- !u!114 &5719664476069948063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4714454037070712302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88dcc5bf51773874fa1211b8e64dde03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _fireRateInSeconds: 0.3
   _projectilePrefab: {fileID: 1802014037444056195, guid: 942309af99b23d24ab82bd2ae296ba9c, type: 3}
   _projectileSpawnPosition: {fileID: 1361128632705851227}
-  _speed: 5

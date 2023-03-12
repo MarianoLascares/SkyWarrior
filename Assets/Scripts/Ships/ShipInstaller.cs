@@ -12,7 +12,7 @@ namespace Assets.Scripts.Ships
     {
         [SerializeField] private bool _useAI;
         [SerializeField] private bool _useJoystick;
-        [SerializeField] private Ship _ship;
+        [SerializeField] private ShipMediator _ship;
         [SerializeField] private Joystick _joystick;
         [SerializeField] private JoyButton _joyButton;
 
