@@ -1,13 +1,14 @@
+using Assets.Scripts.Ships.Weapons;
 using System.Collections;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private string _id;
+    [SerializeField] private ProjectileId _id;
     [SerializeField] private Rigidbody2D _rigidBody;
     [SerializeField] private float _speed;
 
-    public string Id => _id;
+    public string Id => _id.Value;
 
     private void Start()
     {

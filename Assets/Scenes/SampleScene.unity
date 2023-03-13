@@ -682,21 +682,13 @@ PrefabInstance:
       value: Ship
       objectReference: {fileID: 0}
     - target: {fileID: 5719664476069948063, guid: 041237dd5ee79ac4383481d87bef44d5, type: 3}
-      propertyPath: _fireRateInSeconds
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5719664476069948063, guid: 041237dd5ee79ac4383481d87bef44d5, type: 3}
-      propertyPath: _projectilePrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5719664476069948063, guid: 041237dd5ee79ac4383481d87bef44d5, type: 3}
-      propertyPath: _projectilePrefabs.Array.data[0]
+      propertyPath: _defaultProjectileId
       value: 
-      objectReference: {fileID: 1802014037444056195, guid: 942309af99b23d24ab82bd2ae296ba9c, type: 3}
+      objectReference: {fileID: 11400000, guid: 2933557b41ff72c4bae9847c4f04a833, type: 2}
     - target: {fileID: 5719664476069948063, guid: 041237dd5ee79ac4383481d87bef44d5, type: 3}
-      propertyPath: _projectilePrefabs.Array.data[1]
+      propertyPath: _projectilesConfiguration
       value: 
-      objectReference: {fileID: 1802014037444056195, guid: 2770ae5c3f623c94a9bc0b675c67c6e8, type: 3}
+      objectReference: {fileID: 11400000, guid: f81db93f8058c1846871ae3ecc51e497, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 041237dd5ee79ac4383481d87bef44d5, type: 3}
 --- !u!1001 &7889204072145597542
