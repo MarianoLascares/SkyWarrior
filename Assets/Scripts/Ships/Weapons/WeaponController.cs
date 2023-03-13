@@ -1,5 +1,3 @@
-﻿using System;
-using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Ships.Weapons
@@ -16,33 +14,36 @@ namespace Assets.Scripts.Ships.Weapons
         private string _activeProjectileId;
         private IShip _ship;
 
-        public void Configure(IShip ship)
-        {
-            _ship = ship;
-            _activeProjectileId = _defaultProjectileId.Value;
-        }
-
         private void Awake()
         {
             var instance = Instantiate(_projectilesConfiguration);
             _projectileFactory = new ProjectileFactory(instance);
         }
 
-        internal void TryShoot()
+        public void Configure(IShip ship)
+        {
+            _ship = ship;
+            _activeProjectileId = _defaultProjectileId.Value;
+        }
+
+        public void TryShoot()
         {
             _remainingSecondsToBeAbleToShoot -= Time.deltaTime;
             if (_remainingSecondsToBeAbleToShoot > 0)
             {
                 return;
             }
+
             Shoot();
         }
 
         private void Shoot()
         {
-            Projectile prefab = _projectileFactory.Create(_activeProjectileId, _projectileSpawnPosition.position, _projectileSpawnPosition.rotation);
+            var projectile = _projectileFactory
+               .Create(_activeProjectileId,
+                       _projectileSpawnPosition.position,
+                       _projectileSpawnPosition.rotation);
             _remainingSecondsToBeAbleToShoot = _fireRateInSeconds;
         }
-
     }
 }

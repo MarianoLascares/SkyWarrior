@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Ships.Weapons.Projectiles;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Ships.Weapons
