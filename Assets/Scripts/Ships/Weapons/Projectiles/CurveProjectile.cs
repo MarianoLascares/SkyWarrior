@@ -5,23 +5,19 @@ namespace Assets.Scripts.Ships.Weapons.Projectiles
 {
     public class CurveProjectile : Projectile
     {
-        [SerializeField] private Rigidbody2D _rigidBody2D;
         [SerializeField] private float _speed;
         [SerializeField] AnimationCurve _horizontalPosition;
 
         private float _currentTime;
         private Vector3 _currentPosition;
-        private Transform _myTransform;
 
-        private void Start()
+        protected override void DoStart()
         {
             _currentTime = 0;
-            _myTransform = transform;
             _currentPosition = _myTransform.position;
-            StartCoroutine(DestroyIn(3));
         }
 
-        private void FixedUpdate()
+        protected override void DoMove()
         {
             _currentPosition += _myTransform.up * _speed * Time.deltaTime;
             var horizontalPosition = _myTransform.right * _horizontalPosition.Evaluate(_currentTime);
@@ -30,10 +26,8 @@ namespace Assets.Scripts.Ships.Weapons.Projectiles
             _currentTime += Time.deltaTime;
         }
 
-        private IEnumerator DestroyIn(float seconds)
+        protected override void DoDestroy()
         {
-            yield return new WaitForSeconds(seconds);
-            Destroy(gameObject);
         }
     }
 }
