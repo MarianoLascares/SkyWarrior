@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ShipsConfiguration
   m_EditorClassIdentifier: 
   _shipPrefabs:
-  - {fileID: 4714454037070712301, guid: 041237dd5ee79ac4383481d87bef44d5, type: 3}
+  - {fileID: 3935935098784895983, guid: dffb1a6f3f8dcf047a60cd8a8845c571, type: 3}

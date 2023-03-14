@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Input;
+using Assets.Scripts.Ships.Enemies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,15 @@ namespace Assets.Scripts.Ships
         [SerializeField] private Joystick _joystick;
         [SerializeField] private JoyButton _joyButton;
 
+        [SerializeField] private ShipToSpawnConfiguration _shipToSpawnCOnfiguration;
+
         private void Awake()
         {
-            _ship.Configure(GetImput(), GetCheckLimitsStrategy());
+            _ship.Configure(GetImput(), 
+                            GetCheckLimitsStrategy(), 
+                            _shipToSpawnCOnfiguration.Speed, 
+                            _shipToSpawnCOnfiguration.FireRate, 
+                            _shipToSpawnCOnfiguration.DefaultProjectileId);
         }
 
         private ICheckLimits GetCheckLimitsStrategy()

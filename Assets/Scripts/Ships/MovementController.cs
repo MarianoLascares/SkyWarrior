@@ -9,7 +9,7 @@ namespace Assets.Scripts.Ships
 {
     public class MovementController : MonoBehaviour
     {
-        [SerializeField] private Vector2 _speed;
+        private Vector2 _speed;
 
         private IShip _ship;
         private Transform _myTransform;
@@ -20,10 +20,11 @@ namespace Assets.Scripts.Ships
             _myTransform = transform;
         }
 
-        public void Configure(IShip ship, ICheckLimits checkLimits)
+        public void Configure(IShip ship, ICheckLimits checkLimits, Vector2 speed)
         {
             _ship = ship;
             _checkLimits = checkLimits;
+            _speed = speed;
         }
         public void Move(Vector2 direction)
         {

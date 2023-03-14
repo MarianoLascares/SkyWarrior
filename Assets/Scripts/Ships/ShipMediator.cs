@@ -1,5 +1,6 @@
 using Assets.Scripts.Ships;
 using Assets.Scripts.Ships.Weapons;
+using System;
 using UnityEngine;
 
 
@@ -15,11 +16,12 @@ public class ShipMediator : MonoBehaviour, IShip
     [SerializeField] private ShipId _shipId;
     public string Id => _shipId.Value;
 
-    public void Configure(IInput input, ICheckLimits checkLimits)
+    public void Configure(IInput input, ICheckLimits checkLimits,
+                            Vector2 speed, float fireRate, ProjectileId defaultProjectileId)
     {
         _input = input;
-        _movementControler.Configure(this, checkLimits);
-        _weaponControler.Configure(this);
+        _movementControler.Configure(this, checkLimits, speed);
+        _weaponControler.Configure(this, fireRate, defaultProjectileId);
     }
 
     private void Update() 
@@ -36,4 +38,5 @@ public class ShipMediator : MonoBehaviour, IShip
             _weaponControler.TryShoot();
         }
     }
+
 }

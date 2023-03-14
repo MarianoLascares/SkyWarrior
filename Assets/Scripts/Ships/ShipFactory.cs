@@ -11,7 +11,7 @@ namespace Assets.Scripts.Ships
             _configuration = configuration;
         }
 
-        public IShip Create(string id, Vector3 position, Quaternion rotation)
+        public ShipMediator Create(string id, Vector3 position, Quaternion rotation)
         {
             var prefab = _configuration.GetShip(id);
             return GameObject.Instantiate(prefab, position, rotation);

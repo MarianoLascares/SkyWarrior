@@ -5,9 +5,8 @@ namespace Assets.Scripts.Ships.Weapons
     public class WeaponController : MonoBehaviour
     {
         [SerializeField] private ProjectilesConfiguration _projectilesConfiguration;
-        [SerializeField] private ProjectileId _defaultProjectileId;
-        [SerializeField] private float _fireRateInSeconds;
         [SerializeField] private Transform _projectileSpawnPosition;
+        private float _fireRateInSeconds;
         private float _remainingSecondsToBeAbleToShoot;
         private ProjectileFactory _projectileFactory;
 
@@ -20,10 +19,12 @@ namespace Assets.Scripts.Ships.Weapons
             _projectileFactory = new ProjectileFactory(instance);
         }
 
-        public void Configure(IShip ship)
+        public void Configure(IShip ship, float fireRate, ProjectileId defaultProjectileId)
         {
             _ship = ship;
-            _activeProjectileId = _defaultProjectileId.Value;
+            _activeProjectileId = defaultProjectileId.Value;
+            _fireRateInSeconds = fireRate;
+
         }
 
         public void TryShoot()
