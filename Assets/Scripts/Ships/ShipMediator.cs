@@ -11,7 +11,10 @@ public class ShipMediator : MonoBehaviour, IShip
     [SerializeField] private WeaponController _weaponControler;
 
     private IInput _input;
-    
+
+    [SerializeField] private ShipId _shipId;
+    public string Id => _shipId.Value;
+
     public void Configure(IInput input, ICheckLimits checkLimits)
     {
         _input = input;
